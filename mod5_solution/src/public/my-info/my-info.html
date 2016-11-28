@@ -1,0 +1,17 @@
+<div class="container">
+  <h2 id="myInfo-title" class="text-center">About Me</h2>
+  <div ng-if="myinfoCtrl.user.firstName !== undefined">
+  First Name: {{ myinfoCtrl.user.firstName }}  <br/>
+  Last Name: {{ myinfoCtrl.user.lastName }}   <br/>
+  Email: {{ myinfoCtrl.user.email }}  <br/>
+  Phone: {{ myinfoCtrl.user.phone }}  <br/>
+
+  <h3>Favourite Menu Item:  </h3>
+  <hr>
+  <menu-item menu-item="myinfoCtrl.user.favDish"></menu-item>
+  </div>
+  <div ng-show="{{ myinfoCtrl.user.firstName === undefined }}">
+    Doesn't look like you have signed up yet.
+    <a ui-sref="public.signup">Sign up for our newsletter now</a>
+  </div>
+</div>
